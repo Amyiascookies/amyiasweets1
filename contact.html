@@ -30,7 +30,7 @@
         <p>If you have any questions or would like to learn more about what we do, please don't hesitate to reach out.</p>
         <address>
             Email: <a href="mailto:info@company.com">Amyia_evans@amyiasweets.com</a><br>
-            Phone: (123) 456-7890
+            Phone: (941) 456-7890
         </address>
     </section>
 
@@ -38,16 +38,54 @@
     <section class="contact-row">
         <h2>Contact Form</h2>
         <p>Fill out the form below to reach out to me directly.</p>
-        <form action="contact_process.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <form action="response_page.js" method="post">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <!-- Personal Information Fieldset -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <!-- Name Field -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email Address">
+            </fieldset>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <!-- Message Fieldset -->
+            <fieldset>
+                <legend>Message</legend>
 
+                <!-- Message Field -->
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+            </fieldset>
+
+            <!-- Preferences Fieldset -->
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <!-- Subject Field (Select Box) -->
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject" required>
+                    <option value="general">General Inquiry</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="support">Support</option>
+                </select>
+                
+                <!-- Preferred Contact Method (Radio Buttons) -->
+                <label>Preferred Contact Method:</label>
+                <div class="radio-buttons">
+                    <label><input type="radio" name="contact-method" value="email" required>Email</label>
+                    <label><input type="radio" name="contact-method" value="phone">Phone</label>
+                </div>
+
+                <!-- Newsletter Subscription (Checkbox) -->
+                <label><input type="checkbox" name="newsletter" value="subscribe"> Subscribe to our newsletter</label>
+            </fieldset>
+
+            <!-- Submit Button -->
             <button type="submit">Send Message</button>
         </form>
     </section>
