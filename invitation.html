@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Invitation</title>
+   <link rel="stylesheet" href="styles.css">
+  <form action="response_page.js" method="post">
+
+</head>
+<body>
+  <div id="invitation-container">
+    <h1>Invitation</h1>
+    <p>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+	<li><a href="invitation.html">Invitation</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="interests.html">My Interests</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+</nav>
+
+        Hello <span id="recipientNamePlaceholder">__recipientName__</span>!
+    </p>
+    <p>
+      You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.
+    </p>
+    <p>
+      Thanks!
+    </p>
+    <p>
+      <span id="hostNamePlaceholder">__hostName__</span>
+    </p>
+  </div>
+
+  <!-- Form to collect input data -->
+  <form id="invitationForm">
+    <label for="recipientNameInput">Recipient's Name:</label>
+    <input type="text" id="recipientNameInput" required>
+    
+    <label for="hostNameInput">Your Name (Host's Name):</label>
+    <input type="text" id="hostNameInput" required>
+
+    <button type="submit">Generate Invitation</button>
+  </form>
+
+    <form action="response_page.js" method="post">
+</body>
+</html>
