@@ -30,3 +30,47 @@ popup.addEventListener('click', (event) => {
         popup.style.display = 'none';
     }
 });
+// script.js
+
+// Function to handle form submission and update the invitation
+document.getElementById('invitationForm').addEventListener('submit', function(event) {
+    // Prevent the form from actually submitting
+    event.preventDefault();
+
+    // Declare variables to store form input values
+    var recipientName = document.getElementById("recipientNameInput").value;
+    var hostName = document.getElementById("hostNameInput").value;
+
+    // Check if the input values are not empty (optional validation)
+    if (recipientName.trim() === "" || hostName.trim() === "") {
+        alert("Please fill in both fields.");
+        return;
+    }
+
+    // Replace the placeholders in the invitation with the entered names
+    document.getElementById("recipientNamePlaceholder").innerHTML = recipientName;
+    document.getElementById("hostNamePlaceholder").innerHTML = hostName;
+});
+
+// script.js
+
+// Function to handle form submission and update the invitation
+document.getElementById('invitationForm').addEventListener('submit', function(event) {
+    // Prevent the form from actually submitting
+    event.preventDefault();
+
+    // Declare variables to store form input values
+    var recipientName = document.getElementById("recipientNameInput").value;
+    var hostName = document.getElementById("hostNameInput").value;
+
+    // Check if the input values are not empty (optional validation)
+    if (recipientName.trim() === "" || hostName.trim() === "") {
+        alert("Please fill in both fields.");
+        return;
+    }
+
+    // Replace the placeholders in the invitation with the entered names
+    document.getElementById("recipientNamePlaceholder").innerHTML = recipientName;
+    document.getElementById("hostNamePlaceholder").innerHTML = hostName;
+});
+
