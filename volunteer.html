@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="styles.css"> 
+    <title>Volunteer List</title>
+    <style>
+        /* Some basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .volunteer-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+	<li><a href="volunteer.html">Volunteer</a></li>
+	<li><a href="invitation.html">Invitation</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="interests.html">My Interests</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+</nav>
+
+<body>
+
+<h2>Volunteer Registration</h2>
+
+<!-- Form to add or delete volunteers -->
+<form id="volunteerForm">
+    <label for="volunteerName">Volunteer Name:</label>
+    <input type="text" id="volunteerName" name="volunteerName" required>
+    <button type="submit">Add Volunteer</button>
+    <button type="button" onclick="deleteVolunteer()">Delete Volunteer</button>
+</form>
+
+<h3>Volunteer List:</h3>
+<ul id="volunteerList" class="volunteer-list">
+    <!-- Volunteer list will be displayed here -->
+</ul>
+
+<script>
+// Initializing an empty array to store volunteer names
+let volunteers = [];
+
+// Function to add a volunteer
+document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission (page reload)
+
+    // Get the volunteer name from the input field
+    const volunteerName = document.getElementById('volunteerName').value.trim();
+
+    // If the name is not empty, add to the volunteers array
+    if (volunteerName !== "") {
+        volunteers.push(volunteerName);
+        displayVolunteers(); // Update the displayed volunteer list
+        document.getElementById('volunteerName').value = ""; // Clear input field
+    } else {
+        alert("Please enter a volunteer name.");
+    }
+});
+
+// Function to delete a volunteer
+function deleteVolunteer() {
+    const volunteerName = document.getElementById('volunteerName').value.trim();
+
+    if (volunteerName !== "") {
+        const index = volunteers.indexOf(volunteerName);
+
+        if (index !== -1) {
+            volunteers.splice(index, 1); // Remove the volunteer from the array
+            displayVolunteers(); // Update the displayed volunteer list
+            document.getElementById('volunteerName').value = ""; // Clear input field
+        } else {
+            alert("Volunteer not found!");
+        }
+    } else {
+        alert("Please enter a volunteer name to delete.");
+    }
+}
+
+// Function to display volunteers with a running count
+function displayVolunteers() {
+    const volunteerList = document.getElementById('volunteerList');
+    volunteerList.innerHTML = ""; // Clear the current list
+
+    // Loop through the volunteers array and create a list item for each volunteer
+    for (let i = 0; i < volunteers.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = `${i + 1}. ${volunteers[i]}`; // Displaying index + 1 and the volunteer name
+        volunteerList.appendChild(li);
+    }
+}
+
+</script>
+
+</body>
+</html>
