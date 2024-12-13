@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="styles.css"> 
-    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
 </head>
 <body>
 <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
-	<li><a href="registration.html">registration</a></li>
+        <li><a href="registration.html">Registration</a></li>
         <li><a href="volunteer.html">Volunteer</a></li>
         <li><a href="invitation.html">Invitation</a></li>
         <li><a href="about.html">About Me</a></li>
@@ -20,44 +20,51 @@
     </ul>
 </nav>
 
+<h1>Registration Form</h1>
+<form id="registrationForm">
+    <label for="username">Username*</label>
+    <input type="text" id="username" name="username" required><br>
 
-    <form id="registrationForm" action="confirmation.php" method="POST">
-        <label for="username">Username*</label>
-        <input type="text" id="username" name="username" required>
-        <div id="usernameError" class="error-message"></div>
-        
-        <label for="password">Password*</label>
-        <input type="password" id="password" name="password" required>
-        <div id="passwordError" class="error-message"></div>
-        
-        <label for="passwordVerify">Verify Password*</label>
-        <input type="password" id="passwordVerify" name="passwordVerify" required>
-        <div id="passwordVerifyError" class="error-message"></div>
-        
-        <label for="firstName">First Name*</label>
-        <input type="text" id="firstName" name="firstName" required>
-        <div id="firstNameError" class="error-message"></div>
-        
-        <label for="lastName">Last Name*</label>
-        <input type="text" id="lastName" name="lastName" required>
-        <div id="lastNameError" class="error-message"></div>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
-        <div id="emailError" class="error-message"></div>
-        
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" id="phoneNumber" name="phoneNumber">
-        <div id="phoneNumberError" class="error-message"></div>
-        
-        <label>Sign Up for Newsletter</label>
-        <input type="radio" id="yes" name="signUpNewsletter" value="yes"> Yes
-        <input type="radio" id="no" name="signUpNewsletter" value="no"> No
-        <div id="newsletterError" class="error-message"></div>
+    <label for="password">Password*</label>
+    <input type="password" id="password" name="password" required><br>
 
-        <button type="submit">Register</button>
-    </form>
+    <label for="passwordVerify">Verify Password*</label>
+    <input type="password" id="passwordVerify" name="passwordVerify" required><br>
 
-    <script src="validation.js"></script>
+    <label for="firstName">First Name*</label>
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <label for="lastName">Last Name*</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" id="phoneNumber" name="phoneNumber"><br>
+
+    <label>Sign Up for Newsletter</label>
+    <input type="radio" id="yes" name="signUpNewsletter" value="yes"> Yes
+    <input type="radio" id="no" name="signUpNewsletter" value="no"> No<br>
+
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevent form submission
+        
+        // Collect form values
+        const formData = new FormData(this);
+        formData.forEach((value, key) => {
+            // Store each form field value in a cookie
+            document.cookie = `${key}=${value};path=/`;
+        });
+        
+        // Redirect to confirm.html
+        window.location.href = "confirm.html";
+    });
+</script>
+
 </body>
 </html>
