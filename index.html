@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <title>My Homepage</title>
+    <!-- 
+        Author: Amyia
+        Date: 2024-10-29
+        File: index.html
+        This page serves as the homepage of my website, introducing myself and linking to other pages. 
+    -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
 </head>
-<body>
+<body onload="onPageLoad()">
 
+<!-- Header Section -->
 <header>
-    <h1>Gallery</h1>
-    <p>Explore Our Sweet Creations</p>
+    <h1>AMYIA SWEETS</h1>
+    <img src="C:/Users/shani/Downloads/logo2.png" alt="Amyia Sweets Logo" />
 </header>
 
+<!-- Navigation Section -->
 <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
-	<li><a href="volunteer.html">Volunteer</a></li>
-	<li><a href="invitation.html">Invitation</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="invitation.html">Invitation</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="interests.html">My Interests</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -25,61 +33,41 @@
     </ul>
 </nav>
 
+<!-- Main Content Section with Rows and Columns -->
 <main>
-     <div class="gallery">
-        <a href="image1-large.jpg" class="popup-link">
-            <img src="image1-thumbnail.jpg" alt="Description of Image 1" class="thumbnail">
-        </a>
-        <a href="image2-large.jpg" class="popup-link">
-            <img src="image2-thumbnail.jpg" alt="Description of Image 2" class="thumbnail">
-        </a>
-        <a href="image3-large.jpg" class="popup-link">
-            <img src="image3-thumbnail.jpg" alt="Description of Image 3" class="thumbnail">
-        </a>
-    </div>
+    <div class="content-wrapper">
+        <!-- First Column (Welcome Message) -->
+        <section class="content-column">
+            <h2>Welcome to My Homepage</h2>
+            <p>Welcome to Amyia's Sweets! We’re passionate about creating delicious, handcrafted cookies that bring a smile to your face and warmth to your heart. Founded in 2024, our journey began with a simple love for baking and a desire to share the joy of fresh cookies with our community.</p>
+            <p>At Amyia Sweets, we believe in using only the finest ingredients. Each batch is made with care, ensuring that every cookie is soft, chewy, and bursting with flavor. From classic chocolate chip to our unique seasonal creations, there’s a cookie for everyone!</p>
+        </section>
 
-    <!-- Popup Modal -->
-    <div id="image-popup" class="popup">
-        <span id="close-popup" class="close">&times;</span>
-        <img id="popup-img" src="" alt="Large Image">
+        <!-- Second Column (More Info) -->
+        <section class="content-column">
+            <p>We take pride in supporting local farmers and suppliers, sourcing our ingredients sustainably and ethically. Our cozy shop is a place where friends and families can gather, enjoy a treat, and create sweet memories.</p>
+            <p>Whether you’re stopping by for a snack, ordering a custom batch for a special occasion, or gifting a cookie box to someone you love, we’re here to make your day a little sweeter. Thank you for supporting local business!</p>
+            <p>Stay sweet,<br>The Amyia Sweets Team</p>
+        </section>
     </div>
 </main>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Page</title>
-</head>
-<body>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Embed</title>
-</head>
-<body>
+<!-- Banner Section -->
+<section id="bannerSection">
+    <img id="bannerImg" src="images/banner1.jpg" alt="Banner" class="banner-img">
+</section>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/45fTbG4zyhQ?si=5lkFEKJORSJovyZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-
-
- <div class="gallery">
-        <div class="audio-item">
-            <audio controls>
-                <source src="firewood-burning-sound-179862.mp3" type="audio/mp3">
-         
-            <p>Wood Fire Oven</p>
-        </div>
-</body>
-</html>
-
-
+<!-- Footer Section -->
 <footer>
+    <nav>
+        <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+    </nav>
     <p>&copy; 2024 Amyia Sweets. All rights reserved.</p>
 </footer>
 
+<script src="scripts.js"></script>
 </body>
 </html>
